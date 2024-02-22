@@ -9,6 +9,9 @@ class UserProfile_Class:
     Click_Register_XPATH = (By.XPATH, "//button[@type='submit']")
     Validate_Registration_XPATH = (By.XPATH, "//h2[normalize-space()='CredKart']")
 
+    Click_LoginUser_XPATH = (By.XPATH, "//a[@role='button']")
+    Click_UserLogOut_XPATH = (By.XPATH, "//a[normalize-space()='Logout']")
+
     def __init__(self, driver):
         self.driver = driver
 
@@ -26,6 +29,13 @@ class UserProfile_Class:
 
     def Click_Login_Or_Registration(self):
         self.driver.find_element(*UserProfile_Class.Click_Register_XPATH).click()
+
+
+    def Click_LoginUser(self):
+        self.driver.find_element(*UserProfile_Class.Click_LoginUser_XPATH).click()
+
+    def Click_Logout(self):
+        self.driver.find_element(*UserProfile_Class.Click_UserLogOut_XPATH).click()
 
     def Validate_Login_Or_Registration(self):
         try:
